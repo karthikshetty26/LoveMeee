@@ -1,4 +1,4 @@
-# Love me - Yes/No (18/01/2023)
+# Love me (18/01/2023)
 
 I came across this small fun project while attending the Scaler Javascript Bootcamp. Take a look at this. Just a quick build I wanted to share with you.
 
