@@ -27,19 +27,22 @@ function getRandomPosition() {
     const viewportHeight = window.innerHeight;
     
     // Get button dimensions
-    const buttonWidth = nodiv.offsetWidth || 100;
-    const buttonHeight = nodiv.offsetHeight || 40;
+    const buttonWidth = nodiv.offsetWidth || 120;
+    const buttonHeight = nodiv.offsetHeight || 50;
     
-    // Add padding to keep button within safe area
-    const padding = 20;
+    // Add larger padding to keep button well within safe area
+    const padding = 40;
     
-    // Generate random position within safe bounds
-    const randomX = Math.random() * (viewportWidth - buttonWidth - padding * 2) + padding;
-    const randomY = Math.random() * (viewportHeight - buttonHeight - padding * 2) + padding;
+    // Generate random position within safe bounds with better constraints
+    const maxX = Math.max(padding, viewportWidth - buttonWidth - padding);
+    const maxY = Math.max(padding, viewportHeight - buttonHeight - padding);
+    
+    const randomX = Math.random() * (maxX - padding) + padding;
+    const randomY = Math.random() * (maxY - padding) + padding;
     
     return {
-        x: randomX,
-        y: randomY
+        x: Math.min(randomX, viewportWidth - buttonWidth - padding),
+        y: Math.min(randomY, viewportHeight - buttonHeight - padding)
     };
 }
 
@@ -47,7 +50,8 @@ function getRandomPosition() {
 function moveButtonRandomly() {
     const pos = getRandomPosition();
     
-    // Use transform for better performance
+    // Switch to fixed positioning when escaping
+    nodiv.style.position = "fixed";
     nodiv.style.left = pos.x + "px";
     nodiv.style.top = pos.y + "px";
     nodiv.style.right = "auto";
@@ -63,14 +67,19 @@ function pop() {
         // Reset button position and flag when closing popup
         setTimeout(() => {
             flag = 1;
+            nodiv.style.position = "relative";
             nodiv.style.left = "auto";
-            nodiv.style.right = "20px";
+            nodiv.style.right = "auto";
             nodiv.style.top = "auto";
-            nodiv.style.bottom = "20px";
+            nodiv.style.bottom = "auto";
         }, 300);
     } else {
         overlay.style.visibility = "visible";
         overlay.style.opacity = 1;
+        // Trigger confetti animation when popup opens
+        setTimeout(() => {
+            triggerConfetti();
+        }, 100);
     }
 }
 
@@ -79,6 +88,33 @@ function f() {
     // Move button to completely random position on each hover
     moveButtonRandomly();
 }
+
+// ===== PROXIMITY DETECTION: Escape on Mouse Approach =====
+// Track mouse position and escape if getting too close
+const proximityDistance = 120; // Distance in pixels to trigger escape
+let lastEscapeTime = 0;
+const escapeDebounce = 150; // Minimum time between escapes (ms)
+
+document.addEventListener("mousemove", function(e) {
+    if (!nodiv) return;
+    
+    const rect = nodiv.getBoundingClientRect();
+    const buttonCenterX = rect.left + rect.width / 2;
+    const buttonCenterY = rect.top + rect.height / 2;
+    
+    // Calculate distance from mouse to button center
+    const distance = Math.sqrt(
+        Math.pow(e.clientX - buttonCenterX, 2) + 
+        Math.pow(e.clientY - buttonCenterY, 2)
+    );
+    
+    // Escape if mouse is within proximity distance
+    const now = Date.now();
+    if (distance < proximityDistance && now - lastEscapeTime > escapeDebounce) {
+        moveButtonRandomly();
+        lastEscapeTime = now;
+    }
+});
 
 // ===== ENHANCED HOVER EVENT HANDLERS =====
 // Add mouse enter handler for better UX
