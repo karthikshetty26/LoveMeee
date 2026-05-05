@@ -89,15 +89,20 @@ body {
 }
 
 .buttons-wrapper {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
     flex-wrap: wrap;
+    width: 100%;
+    transition: justify-content 0.3s ease;
 }
 
 .yes_div {
+    position: relative;
     width: auto;
+    transition: transform 0.3s ease;
     text-align: center;
     animation: fadeIn 0.8s ease-in-out;
 }
@@ -284,17 +289,6 @@ body {
     }
 }
 
-@keyframes breathe {
-    0%, 100% {
-        transform: scale(1);
-        text-shadow: 0 4px 8px rgba(255, 64, 129, 0.2);
-    }
-    50% {
-        transform: scale(1.03);
-        text-shadow: 0 8px 25px rgba(255, 64, 129, 0.4);
-    }
-}
-
 @keyframes heartbeat {
     0%, 25%, 50%, 100% {
         transform: scale(1);
@@ -327,46 +321,7 @@ body {
     }
 }
 
-@keyframes slideOut {
-    from {
-        transform: scale(1) translateY(0);
-        opacity: 1;
-    }
-    to {
-        transform: scale(0.85) translateY(30px);
-        opacity: 0;
-    }
-}
 
-@keyframes buttonHover {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
-    100% {
-        transform: scale(1.1);
-    }
-}
-
-@keyframes pulse {
-    0%, 100% {
-        box-shadow: 0px 0px 5px gray;
-    }
-    50% {
-        box-shadow: 0px 0px 15px rgba(249, 154, 228, 0.5);
-    }
-}
-
-@keyframes shimmer {
-    0% {
-        background-position: -1000px 0;
-    }
-    100% {
-        background-position: 1000px 0;
-    }
-}
 
 /* ===== RESPONSIVE DESIGN ===== */
 
@@ -451,9 +406,5 @@ body {
     .container h1 {
         font-size: 2.5rem;
         margin-bottom: 40px;
-    }
-
-    .btn:hover {
-        animation: buttonHover 0.4s ease-out;
     }
 }
