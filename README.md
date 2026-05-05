@@ -2,9 +2,11 @@
 
 A fun, interactive "Do you love me?" web app - perfect for sending to your crush!
 
-![HeartConfess](https://img.shields.io/badge/Live-Demo-brightgreen) [View Live Demo](https://heartconfess.netlify.app)
-
 > 📅 **Origin Story:** This project was first created on **18/01/2023** - no AI involved! Just some Google searching and brainpower. Now using AI to upgrade and enhance it 🚀
+
+## 🚀 Live Demo
+
+**🌐 [heartconfess.netlify.app](https://heartconfess.netlify.app)**
 
 ## ✨ Features
 
@@ -13,11 +15,6 @@ A fun, interactive "Do you love me?" web app - perfect for sending to your crush
 - 😍 Romantic "I love you more" response popup
 - 💻 Desktop-optimized with mouse interaction
 - 📱 Mobile-friendly "Open on Desktop" message
-- 🎨 Beautiful pink gradient design with floating heart decorations
-
-## 🚀 Live Demo
-
-**🌐 [heartconfess.netlify.app](https://heartconfess.netlify.app)**
 
 ## 📁 Project Structure
 
@@ -44,8 +41,9 @@ HeartConfess/
 
 ## 🤝 Credits
 
-- Heart icons from [SVG Repo](https://www.svgrepo.com)
-- Fonts from [Google Fonts](https://fonts.google.com)
+- 💡 **Inspiration:** [bit.ly/3GSlidc](http://bit.ly/3GSlidc)
+- 🎨 Heart icons from [SVG Repo](https://www.svgrepo.com)
+- 🔤 Fonts from [Google Fonts](https://fonts.google.com)
 
 ---
 
