@@ -35,15 +35,7 @@ body {
     background: linear-gradient(135deg, #fff5f9 0%, #ffe6f0 50%, #fff5f9 100%);
     flex-direction: column;
     text-align: center;
-}
-
-.no-mouse-content {
     padding: 40px;
-    max-width: 600px;
-    background: radial-gradient(120% 120% at 50% 50%, #fff7fb 0%, #ffe0ee 100%);
-    border-radius: 20px;
-    box-shadow: 0 15px 50px rgba(255, 64, 129, 0.2), 0 0 40px rgba(249, 154, 228, 0.15);
-    border: 1px solid rgba(255, 90, 157, 0.2);
 }
 
 .no-mouse-title {
@@ -62,6 +54,7 @@ body {
     color: #666;
     line-height: 1.6;
     animation: fadeIn 0.8s ease-in-out 0.2s both;
+    max-width: 500px;
 }
 
 #app_container {
