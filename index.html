@@ -18,44 +18,54 @@
 
 <body>
 
-    <div id="body_hideen_text">
-        <h2>Open this in computer my love</h2>
-    </div>
-
-    <div id="body_content">
-        <div class="container">
-
-            <h1>Hello World</h1>
-
-            <div class="buttons-wrapper">
-                <div class="yes_div">
-                    <button type="button" onclick="pop()" class="btn btn_yes">
-                        <!-- <span class="btn-icon btn-icon-yes"></span> -->
-                        <span class="btn-text">Yes</span>
-                    </button>
-                </div>
-
-                <div id="nodiv" class="no_div">
-                    <button onmouseover="f()" class="btn btn_no">
-                        <!-- <span class="btn-icon btn-icon-no"></span> -->
-                        <span class="btn-text">No</span>
-                    </button>
-                </div>
-            </div>
-
-        </div>
-
-        <div id="overlay" class="overlay">
-            <div class="popup">
-                <h2>I love you more 💝</h2>
-
-                <ul class="popup_btns">
-                    <li><span onclick="pop()">Home&nbsp;<i class="fa-solid fa-house-chimney"></i></span></li>
-                </ul>
-            </div>
+    <!-- Mobile/No Mouse Support Message -->
+    <div id="no_mouse_message" class="no-mouse-container">
+        <div class="no-mouse-content">
+            <h1 class="no-mouse-title">Open this on Desktop 💻</h1>
+            <p class="no-mouse-subtitle">This experience is designed for mouse interactions. Please visit on a desktop or laptop to play! 🖱️</p>
         </div>
     </div>
 
+    <!-- Main App Content (Hidden on Mobile) -->
+    <div id="app_container" style="display: none;">
+        <div id="body_content">
+
+            <!-- Do you love me? - Question -->
+            <div class="container">
+
+                <h1>Do you love me?</h1>
+
+                <div class="buttons-wrapper">
+                    <div class="yes_div">
+                        <button type="button" onclick="acceptYes()" class="btn btn_yes">
+                            <span class="btn-icon btn-icon-yes"></span>
+                            <span class="btn-text">Yes</span>
+                        </button>
+                    </div>
+
+                    <div id="nodiv" class="no_div">
+                        <button onmouseover="f()" class="btn btn_no">
+                            <span class="btn-icon btn-icon-no"></span>
+                            <span class="btn-text">No</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- They said "Yes" -->
+            <div id="overlay" class="overlay">
+                <div class="popup popup-romantic">
+                    <div class="popup-content">
+                        <h1 class="popup-title">I love you more 💖</h1>
+                        <p class="popup-subtitle">Okay… you're stuck with me now.</p>
+                    </div>
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="/script.js" type="text/javascript"></script>
 </body>
