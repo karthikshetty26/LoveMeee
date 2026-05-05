@@ -221,10 +221,10 @@ body {
 .popup {
     position: relative;
     width: 100%;
-    max-width: 480px;
-    height: 320px;
+    max-width: 540px;
+    height: 360px;
     background: radial-gradient(120% 120% at 30% 10%, #fff7fb 0%, #ffe0ee 55%, #ffd1e6 100%);
-    border-radius: 43% 57% 56% 44% / 56% 44% 56% 44%;
+    border-radius: 40% 60% 45% 55% / 55% 45% 60% 40%;
     box-shadow: 0 18px 60px rgba(0, 0, 0, 0.25), 0 0 50px rgba(255, 64, 129, 0.15);
     display: flex;
     align-items: center;
@@ -306,10 +306,13 @@ body {
 
 @keyframes blobFloat {
     0%, 100% {
-        border-radius: 43% 57% 56% 44% / 56% 44% 56% 44%;
+        border-radius: 40% 60% 45% 55% / 55% 45% 60% 40%;
     }
-    50% {
-        border-radius: 52% 48% 44% 56% / 48% 56% 44% 52%;
+    33% {
+        border-radius: 55% 45% 60% 40% / 45% 55% 40% 60%;
+    }
+    66% {
+        border-radius: 45% 55% 40% 60% / 60% 40% 55% 45%;
     }
 }
 
